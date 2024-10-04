@@ -1,0 +1,177 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "curator": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lecturer.lecturer",
+      "inversedBy": "coursesCurator"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review"
+    },
+    "isMain": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "unique": true,
+      "min": 0
+    },
+    "isNew": {
+      "type": "boolean",
+      "default": false
+    },
+    "lmsId": {
+      "type": "uid",
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "motto": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "minLength": 2
+    },
+    "freeLectureUrl": {
+      "type": "string",
+      "minLength": 2
+    },
+    "price": {
+      "type": "integer",
+      "required": false
+    },
+    "modules": {
+      "type": "integer",
+      "required": true
+    },
+    "lectures": {
+      "type": "integer",
+      "required": true
+    },
+    "hours": {
+      "type": "integer",
+      "required": true
+    },
+    "month": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "date"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "courses"
+    },
+    "lecturers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lecturer.lecturer",
+      "mappedBy": "coursesLecturer"
+    },
+    "video": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::video.video",
+      "inversedBy": "courses"
+    },
+    "isTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "similarCourses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course"
+    },
+    "learningAdvantage": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::learning-advantage.learning-advantage",
+      "inversedBy": "courses"
+    },
+    "titlePrice": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ctaPrice": {
+      "type": "string",
+      "minLength": 1
+    },
+    "heroBanner1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heroBanner2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "cardBanner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isPremiumCourse": {
+      "type": "component",
+      "repeatable": false,
+      "component": "course.premium"
+    },
+    "tariffs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tariff.tariff",
+      "mappedBy": "courses"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "course.faq"
+    },
+    "targets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "course.target"
+    },
+    "courseProgram": {
+      "type": "component",
+      "repeatable": true,
+      "component": "course.module"
+    }
+  }
+}

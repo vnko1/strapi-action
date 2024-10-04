@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lecturers",
+  "info": {
+    "singularName": "lecturer",
+    "pluralName": "lecturers",
+    "displayName": "Lecturer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "required": true
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "coursesCurator": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "curator"
+    },
+    "coursesLecturer": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "inversedBy": "lecturers"
+    },
+    "experience": {
+      "type": "text",
+      "required": true,
+      "minLength": 2
+    },
+    "achievement": {
+      "type": "text",
+      "required": true,
+      "minLength": 2
+    },
+    "worksWith": {
+      "type": "text",
+      "required": true,
+      "minLength": 2
+    },
+    "isCurator": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

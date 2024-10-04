@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "learning_advantages",
+  "info": {
+    "singularName": "learning-advantage",
+    "pluralName": "learning-advantages",
+    "displayName": "LearningAdvantage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "learningAdvantage"
+    },
+    "advantages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::advantage.advantage",
+      "mappedBy": "learningAdvantages"
+    }
+  }
+}

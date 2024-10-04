@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_course_lessons",
+  "info": {
+    "displayName": "Lesson"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}

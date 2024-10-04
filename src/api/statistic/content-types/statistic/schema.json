@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "statistics",
+  "info": {
+    "singularName": "statistic",
+    "pluralName": "statistics",
+    "displayName": "Statistic",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "studentsQuantity": {
+      "type": "integer"
+    }
+  }
+}

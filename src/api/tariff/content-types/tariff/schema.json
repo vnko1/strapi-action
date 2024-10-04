@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tariffs",
+  "info": {
+    "singularName": "tariff",
+    "pluralName": "tariffs",
+    "displayName": "Tariff",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "price": {
+      "type": "integer"
+    },
+    "placeQuantity": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "text",
+      "minLength": 1
+    },
+    "include": {
+      "type": "text",
+      "minLength": 1
+    },
+    "lmsId": {
+      "type": "uid"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "inversedBy": "tariffs"
+    },
+    "isOpen": {
+      "type": "boolean"
+    }
+  }
+}

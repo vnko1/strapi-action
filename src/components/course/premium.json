@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_course_premiums",
+  "info": {
+    "displayName": "Premium"
+  },
+  "options": {},
+  "attributes": {
+    "mainBanner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "bannerDescription": {
+      "type": "text",
+      "minLength": 1
+    },
+    "bannerSecondaryDescription": {
+      "type": "text",
+      "minLength": 1
+    }
+  }
+}
