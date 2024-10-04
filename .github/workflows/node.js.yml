@@ -16,7 +16,26 @@ jobs:
     strategy:
       matrix:
         node-version: [18.20.4]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    env:
+      NODE_ENV: ${{secrets.NODE_ENV}}
+      HOST: ${{secrets.HOST}}
+      PORT: ${{}}
+      APP_KEYS: ${{}}
+      API_TOKEN_SALT: ${{}}
+      ADMIN_JWT_SECRET: ${{}}
+      TRANSFER_TOKEN_SALT: ${{}}
+      JWT_SECRET: ${{}}
+      DATABASE_CLIENT: ${{}}
+      DATABASE_HOST: ${{secrets.DATABASE_HOST}}
+      DATABASE_PORT: ${{secrets.DATABASE_PORT}}
+      DATABASE_NAME: ${{secrets.DATABASE_NAME}}
+      DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+      DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+      DATABASE_SSL: ${{secrets.DATABASE_SSL}}
+      CLOUDINARY_NAME: ${{secrets.CLOUDINARY_NAME}}
+      CLOUDINARY_KEY: ${{secrets.CLOUDINARY_KEY}}
+      CLOUDINARY_SECRET: ${{secrets.CLOUDINARY_SECRET}}
 
     steps:
       - uses: actions/checkout@v4
