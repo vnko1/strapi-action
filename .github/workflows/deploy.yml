@@ -15,8 +15,8 @@ jobs:
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.3
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-private-key: 1234567890Ho!
 
       - name: Deploy to Hostinger
         run: |
-          ssh ${{ secrets.VPS_ADDRESS }} 'cd app/strapi-action && git pull origin main && npm install && npm run build && pm2 restart strapi'
+          ssh root@62.72.20.238 'cd app/strapi-action && git pull origin main && npm install && npm run build && pm2 restart strapi'
